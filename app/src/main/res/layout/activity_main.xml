@@ -1,74 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@drawable/flowers3"
+    android:scaleType="fitXY"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/background"
-        android:layout_width="799dp"
-        android:layout_height="2263dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/flowers3" />
-
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/projectTextView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageLeft"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/project1_slots"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:background="@color/orange"
+        android:elevation="90dp"
+        android:padding="20dp"
+        android:gravity="start"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253"
-        app:srcCompat="@drawable/f1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/testLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/projectTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="$1 a Play"
+            android:textSize="40sp"
+            android:textColor="#90000000"
+            android:gravity="end"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Match 0 = Lost $1"
+                android:textSize="16sp"
+                android:textColor="#90000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Match 2 = Win $2"
+                android:textSize="16sp"
+                android:textColor="#90000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Match 3 = Win $3"
+                android:textSize="16sp"
+                android:textColor="#90000000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="136dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/testLinearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/imageLeft"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/left_image"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/f1" />
+
+        <ImageView
+            android:id="@+id/imageMiddle"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/middle_image"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/f1" />
+
+        <ImageView
+            android:id="@+id/imageRight"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/right_image"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/f1" />
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageMiddle"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:id="@+id/coin"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="68dp"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/coin"
         android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dol" />
+
+    <ImageButton
+        android:id="@+id/reset"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="68dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/reset_button"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/reset1" />
+
+    <ImageButton
+        android:id="@+id/go"
+        android:layout_width="126dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="388dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/go"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253"
-        app:srcCompat="@drawable/f1" />
+        app:srcCompat="@drawable/go" />
 
-    <ImageView
-        android:id="@+id/imageRight"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
+    <LinearLayout
+        android:id="@+id/money_value_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.91"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.253"
-        app:srcCompat="@drawable/f1" />
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toEndOf="@id/coin">
 
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/dollarSign"
+            android:textColor="#FFD700"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/_5"
+            android:textColor="#FFD700"
+            android:textSize="40sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
