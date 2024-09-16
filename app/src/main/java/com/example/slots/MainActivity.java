@@ -16,7 +16,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     ImageButton reset;
     ImageButton go;
-    ImageView f1, f2, f3;
+    ImageView[] flowerViews = new ImageView[CONSTANTS.NUMB_FLOWERS];
     TextView value;
     int amountStart = CONSTANTS.STARTUP_CASH;
     private final int[] images = {R.drawable.f1, R.drawable.f2, R.drawable.f3};
@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         go = findViewById(R.id.go);
         value = findViewById(R.id.value);
 
-        f1 = findViewById(R.id.imageLeft);
-        f2 = findViewById(R.id.imageMiddle);
-        f3 = findViewById(R.id.imageRight);
+        flowerViews[0] = findViewById(R.id.imageLeft);
+        flowerViews[1] = findViewById(R.id.imageMiddle);
+        flowerViews[2] = findViewById(R.id.imageRight);
 
         value.setText(String.valueOf(amountStart));
 
@@ -84,25 +84,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        f1.startAnimation(spinAnimation);
-        f2.startAnimation(spinAnimation);
-        f3.startAnimation(spinAnimation);
+        for (ImageView flowerView : flowerViews) {
+            flowerView.startAnimation(spinAnimation);
+        }
     }
 
     private void changeImages() {
-        int img1 = images[random.nextInt(images.length)];
-        int img2 = images[random.nextInt(images.length)];
-        int img3 = images[random.nextInt(images.length)];
+        int[] selectedImages = new int[CONSTANTS.NUMB_FLOWERS];
+        for (int i = 0; i < CONSTANTS.NUMB_FLOWERS; i++) {
+            selectedImages[i] = images[random.nextInt(images.length)];
+            flowerViews[i].setImageResource(selectedImages[i]);
+        }
 
-        f1.setImageResource(img1);
-        f2.setImageResource(img2);
-        f3.setImageResource(img3);
-
-        int fullMatch = img1 + img2 + img3;
-        System.out.println(fullMatch);
-        if (fullMatch == CONSTANTS.NUMB_FLOWERS) {
+        if (selectedImages[0] == selectedImages[1] && selectedImages[1] == selectedImages[2]) {
             amountStart += CONSTANTS.MATCH_3;
-        } else if (img1 == img2 || img2 == img3 || img1 == img3) {
+        } else if (selectedImages[0] == selectedImages[1] || selectedImages[1] == selectedImages[2] || selectedImages[0] == selectedImages[2]) {
             amountStart += CONSTANTS.MATCH_2;
         } else {
             amountStart -= CONSTANTS.COST_PER_ROLL;
