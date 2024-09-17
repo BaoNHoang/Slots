@@ -9,4 +9,8 @@
     <string name="coin">coin</string>
     <string name="dollarSign">$</string>
     <string name="_5">5</string>
+    <string name="_1_a_play">$1 a Play</string>
+    <string name="match_0_lost_1">Match 0 = Lost $1</string>
+    <string name="match_2_win_2">Match 2 = Win $2</string>
+    <string name="match_3_win_3">Match 3 = Win $3</string>
 </resources>

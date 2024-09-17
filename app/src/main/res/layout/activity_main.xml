@@ -38,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="$1 a Play"
+            android:text="@string/_1_a_play"
             android:textSize="40sp"
             android:textColor="#90000000"
             android:gravity="end"
@@ -55,23 +55,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Match 0 = Lost $1"
+                android:text="@string/match_0_lost_1"
                 android:textSize="16sp"
-                android:textColor="#90000000" />
+                android:textColor="@color/shadow" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Match 2 = Win $2"
+                android:text="@string/match_2_win_2"
                 android:textSize="16sp"
-                android:textColor="#90000000" />
+                android:textColor="@color/shadow" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Match 3 = Win $3"
+                android:text="@string/match_3_win_3"
                 android:textSize="16sp"
-                android:textColor="#90000000" />
+                android:textColor="@color/shadow" />
         </LinearLayout>
     </LinearLayout>
 
@@ -174,7 +174,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/dollarSign"
-            android:textColor="#FFD700"
+            android:textColor="@color/gold"
             android:textSize="40sp" />
 
         <TextView
@@ -183,7 +183,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/_5"
-            android:textColor="#FFD700"
+            android:textColor="@color/gold"
             android:textSize="40sp" />
     </LinearLayout>
 
